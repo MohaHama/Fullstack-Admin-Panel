@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CRUD js app with api</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script type="module" src="../js/index.js" defer></script>
+  </head>
+  <body>
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar" aria-label="Navigation">
+        <div class="logo">Admin Dashboard</div>
+        <nav class="nav">
+          <a class="nav-item is-active" href="#">Dashboard</a>
+        </nav>
+      </aside>
+
+      <!-- Main -->
+      <main class="main">
+        <!-- Topbar -->
+        <header class="topbar" role="banner">
+          <h1 class="title-1">Dashborad</h1>
+          <div class="topbar-actions">
+            <input class="search" placeholder="Search…" aria-label="Search" />
+          </div>
+        </header>
+
+        <!-- Forms -->
+        <section class="cards">
+          <!-- Add -->
+          <article class="panel">
+            <h2 class="panel-title">Add Product</h2>
+            <form class="form">
+              <div class="field">
+                <label for="name-add">Name</label>
+                <input id="name-add" placeholder="Fx: MacBook Air" required />
+              </div>
+              <div class="row">
+                <div class="field">
+                  <label for="price-add">Price</label>
+                  <input
+                    id="price-add"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    placeholder="9999.00"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="pic-url">Picture URL</label>
+                  <input
+                    id="pic-url"
+                    type="url"
+                    placeholder="https://..."
+                    required
+                  />
+                </div>
+              </div>
+              <div class="actions">
+                <button id="btn-add" type="submit" class="btn ok">Add</button>
+              </div>
+            </form>
+          </article>
+
+          <!-- Update -->
+          <article class="panel">
+            <h2 class="panel-title">Update Product</h2>
+            <form class="form">
+              <div class="field">
+                <label>Produkt-ID</label>
+                <input placeholder="fx: 66f..." required />
+              </div>
+              <div class="field">
+                <label>New Name</label>
+                <input placeholder="Fx: Nyt navn" />
+              </div>
+              <div class="row">
+                <div class="field">
+                  <label>New Price</label>
+                  <input
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    placeholder="123.45"
+                  />
+                </div>
+                <div class="field">
+                  <label>New Picture URL</label>
+                  <input type="url" placeholder="https://..." />
+                </div>
+              </div>
+              <div class="actions">
+                <button type="submit" class="btn warn">Update</button>
+              </div>
+            </form>
+          </article>
+
+          <!-- Delete -->
+          <article class="panel">
+            <h2 class="panel-title">Delete Product</h2>
+            <form class="form">
+              <div class="field">
+                <label for="id-delete">Produkt-ID</label>
+                <input id="id-delete" placeholder="ex: 66f..." required />
+              </div>
+              <div class="actions">
+                <button id="btn-delete" type="submit" class="btn danger">
+                  Delete
+                </button>
+              </div>
+            </form>
+          </article>
+        </section>
+
+        <!-- Products -->
+        <section class="panel">
+          <div class="panel-head">
+            <h2 class="panel-title">Products</h2>
+            <button class="btn primary" id="btn-fetch-all">
+              Fetch All products
+            </button>
+          </div>
+          <div class="products"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
